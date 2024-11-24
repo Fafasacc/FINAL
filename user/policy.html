@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy Modal</title>
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            overflow: auto;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #f0f0f0; /* Gray background */
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%; /* Full width on mobile */
+            max-width: 800px; /* Maximum width */
+            max-height: 80vh; /* Maximum height for the modal */
+            overflow-y: auto; /* Enable vertical scrolling */
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Close button styles */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: #e74c3c; /* Red background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .close:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+
+        /* Headings styles */
+        h2, h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Paragraph styles */
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* List styles */
+        ul {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to open the modal -->
+    <button onclick="openModal()">View Privacy Policy</button>
+
+    
+</body><!-- The Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal()">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> [Date]</p>
+            <p>Thank you for choosing to use our services. We are committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. By accessing or using our services, you agree to the terms of this Privacy Policy.</p>
+            
+            <h3>1. Information We Collect</h3>
+            <p>We may collect personal information from you when you use our services, such as:</p>
+            <ul>
+                <li><strong>Personal Identification Information:</strong> Name, email address, phone number, and other contact details.</li>
+                <li><strong>Account Information:</strong> Information related to your account, including login credentials.</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our website or app, such as pages visited, time spent, and features used.</li>
+                <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies to monitor activity on our services.</li>
+            </ul>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the collected information for various purposes, including:</p>
+            <ul>
+                <li><strong>To provide and maintain our service:</strong> Ensure our services operate efficiently and securely.</li>
+                <li><strong>To personalize your experience:</strong> Tailor content and features to your preferences.</li>
+                <li><strong>To improve our services:</strong> Analyze data to enhance our website or app.</li>
+                <li><strong>To communicate with you:</strong> Send you notifications, updates, and support messages.</li>
+                <li><strong>To comply with legal obligations:</strong> Fulfill any legal requirements and enforce our policies.</li>
+            </ul>
+            
+            <h3>3. Sharing Your Information</h3>
+            <p>We may share your information with:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> Trusted third-party companies that assist us in operating our website, conducting our business, or serving you.</li>
+                <li><strong>Legal Requirements:</strong> Authorities if required by law or to protect our rights, users' safety, or public safety.</li>
+                <li><strong>Business Transfers:</strong> In the event of a merger, sale, or transfer of assets, your information may be transferred to the new owner.</li>
+            </ul>
+            
+            <h3>4. Data Security</h3>
+            <p>We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, use, or disclosure. However, please note that no method of transmission over the internet is completely secure.</p>
+            
+            <h3>5. Your Privacy Rights</h3>
+            <p>Depending on your location, you may have rights under data protection laws, such as:</p>
+            <ul>
+                <li><strong>Access:</strong> The right to request copies of your personal information.</li>
+                <li><strong>Correction:</strong> The right to ask us to correct or update inaccurate or incomplete information.</li>
+                <li><strong>Deletion:</strong> The right to request that we delete your personal information under certain circumstances.</li>
+                <li><strong>Objection:</strong> The right to object to how we process your information in some cases.</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us at [your contact email].</p>
+            
+            <h3>6. Cookies Policy</h3>
+            <p>We use cookies to collect and store information about your use of our services. You can manage your cookie preferences through your browser settings. Note that disabling cookies may impact the functionality of our services.</p>
+            
+            <h3>7. Changes to This Privacy Policy</h3>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We encourage you to review this policy periodically for any updates.</p>
+            
+            <h3>8. Contact Us</h3>
+            <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+            <p><strong>Email:</strong> [Your Contact Email]</p>
+            <p><strong>Address:</strong> [Your Business Address]</p>
+        </div>
+    </div>
+
+    <script>
+        // Functions to open and close the modal
+        function openModal() {
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</html>

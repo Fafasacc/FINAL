@@ -1,0 +1,51 @@
+/* Ensure the notification dropdown is scrollable */
+.custom-notification-dropdown {
+    max-height: 450px !important;  /* Set a max height for the dropdown */
+    overflow-y: auto !important;   /* Enable vertical scrolling */
+    padding: 0;                    /* Remove unnecessary padding */
+    margin: 0;                     /* Remove margin */
+    list-style-type: none;         /* Remove list bullets */
+    position: absolute;            /* Position dropdown relative to parent */
+    background-color: #fff;        /* Set a white background */
+    width: 250px;                  /* Set a fixed width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+    border-radius: 4px;            /* Optional: Rounded corners */
+    z-index: 1000;                 /* Ensure it is above other content */
+    display: none;                 /* Initially hidden */
+}
+
+/* Display dropdown on hover of the parent */
+.onhover-dropdown:hover .custom-notification-dropdown {
+    display: block !important; /* Show dropdown when hovering */
+}
+
+/* Styling for individual notification items */
+.notification-item {
+    padding: 10px 15px;         /* Add padding to each item */
+    border-bottom: 1px solid #ddd; /* Border between items */
+    font-size: 14px;            /* Set font size */
+}
+
+/* Prevent scrollbar showing outside the dropdown content */
+.custom-notification-dropdown::-webkit-scrollbar {
+    width: 8px !important;  /* Set the width of the scrollbar */
+}
+
+.custom-notification-dropdown::-webkit-scrollbar-thumb {
+    background-color: #888 !important; /* Color for the scrollbar thumb */
+    border-radius: 10px;     /* Rounded corners for the scrollbar */
+}
+
+.custom-notification-dropdown::-webkit-scrollbar-thumb:hover {
+    background-color: #555 !important; /* Darker color on hover */
+}
+
+/* Styling for the notification header */
+.notification-header {
+    padding: 10px 15px;  /* Add padding for the header */
+    font-weight: bold;   /* Make the header bold */
+    font-size: 16px;     /* Adjust font size */
+    border-bottom: 2px solid #ddd;  /* Border under the header */
+}
+
+

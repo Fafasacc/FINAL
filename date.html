@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Custom Date and Time Picker</title>
+</head>
+<body>
+  <h1>Choose a Date and Time for Your Visit</h1>
+
+  <!-- Date Picker -->
+  <label for="visitDate">Select Date:</label>
+  <input type="date" id="visitDate" name="visitDate">
+  
+  <!-- Time Picker (Initially hidden) -->
+  <div id="timePicker" style="display: none;">
+    <label for="visitTime">Select Time:</label>
+    <select id="visitTime">
+      <!-- Time options will be added dynamically via JavaScript -->
+    </select>
+  </div>
+
+  <!-- Submit Button -->
+  <button id="submitBtn" style="display: none;">Submit</button>
+
+  <script>
+    // JavaScript for handling date and time selection
+    const visitDate = document.getElementById('visitDate');
+    const timePicker = document.getElementById('timePicker');
+    const visitTime = document.getElementById('visitTime');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Define available time slots (customize these as needed)
+    const availableTimes = {
+      "weekday": ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"],
+      "weekend": ["10:00", "11:00", "12:00", "13:00", "14:00"]
+    };
+
+    // Helper function to check if a selected date is a weekend
+    function isWeekend(date) {
+      const day = date.getDay();
+      return (day === 6) || (day === 0); // Saturday = 6, Sunday = 0
+    }
+
+    // Populate the time picker with available times
+    function populateTimePicker(times) {
+      visitTime.innerHTML = ""; // Clear any previous options
+      times.forEach(time => {
+        const option = document.createElement("option");
+        option.value = time;
+        option.textContent = time;
+        visitTime.appendChild(option);
+      });
+    }
+
+    // Event listener for date change
+    visitDate.addEventListener('change', function() {
+      if (this.value) {
+        // Show time picker and submit button when a date is selected
+        timePicker.style.display = 'block';
+        submitBtn.style.display = 'block';
+
+        const selectedDate = new Date(this.value);
+        if (isWeekend(selectedDate)) {
+          // Populate with weekend time slots
+          populateTimePicker(availableTimes.weekend);
+        } else {
+          // Populate with weekday time slots
+          populateTimePicker(availableTimes.weekday);
+        }
+      } else {
+        // Hide time picker and submit button if no date is selected
+        timePicker.style.display = 'none';
+        submitBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "KALB-QITTA_CASTONE HTML",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}

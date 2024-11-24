@@ -1,0 +1,110 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7edff;
+}
+
+.customToastButtonContainer {
+    margin: 50px;
+}
+
+.customToastButtonContainer button {
+    background: #333;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Notification Box Styles */
+#uniqueToastNotificationBox {
+    position: fixed; /* Fixed position to stay on top of the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    z-index: 9999; /* High z-index to appear above other elements */
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Notification Styling */
+.uniqueToastNotification {
+    width: 280px;
+    height: 70px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: slideInToast 0.5s linear forwards, slideOutToast 0.5s linear 5.5s forwards;
+}
+
+@keyframes slideInToast {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToast {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Icon and Toast Bar Styling */
+.uniqueToastNotification i {
+    margin: 0 20px;
+    font-size: 17px;
+    color: green;
+}
+
+.uniqueToastNotification.errorToast i {
+    color: red;
+}
+
+.uniqueToastNotification.invalidToast i {
+    color: orange;
+}
+
+.uniqueToastNotification::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: toastProgress 6s linear forwards;
+}
+
+@keyframes toastProgress {
+    100% {
+        width: 0;
+    }
+}
+
+.uniqueToastNotification.errorToast::after {
+    background: red;
+}
+
+.uniqueToastNotification.invalidToast::after {
+    background: orange;
+}

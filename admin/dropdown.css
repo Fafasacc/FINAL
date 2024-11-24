@@ -1,0 +1,73 @@
+/* dropdown.css */
+body {
+    background-color: #2a2a2a;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.split-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    transition: background-color 0.3s;
+}
+
+.split-button:hover {
+    background-color: #218838;
+}
+
+.dropdown-toggle {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    background-color: #218838;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Show dropdown only when hovering over the arrow button */
+.dropdown-toggle:hover + .dropdown-content {
+    display: block;
+}
